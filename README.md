@@ -1,6 +1,16 @@
 # JavaScript Logging
 
-## Introduction
+## Overview
+
+Int his lesson we'll be looking at the many ways to log with Javascript 
+
+
+## Objectives
+
+1. Explore the `console` object
+2. Use different logging methods
+
+## Logging 
 
 Journals give us a window into the past, helping us discern what happened when and what the outcome was. We keep journals, traditionally, by writing things down with a timestamp (which could just be a date).
 
@@ -11,11 +21,6 @@ Logging lets us revisit our application as if it was running. It's a useful tool
 In this lesson, we're going to look at ways to log with JavaScript. Let's dive in!
 
 ![dive in](http://i.giphy.com/LlPGmmhr0GcKs.gif)
-
-## Objectives
-
-1. Explore the `console` object
-2. Use different logging methods
 
 ## `console`
 
