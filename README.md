@@ -2,7 +2,7 @@
 
 ## Overview
 
-Int his lesson we'll be looking at the many ways to log with Javascript 
+In this lesson we'll be looking at the many ways to log with Javascript 
 
 
 ## Objectives
