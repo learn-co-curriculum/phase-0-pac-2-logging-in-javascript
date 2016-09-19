@@ -2,7 +2,7 @@
 
 ## Overview
 
-Int his lesson we'll be looking at the many ways to log with Javascript 
+In this lesson we'll be looking at the many ways to log with Javascript 
 
 
 ## Objectives
@@ -34,7 +34,7 @@ Alternatively, you can press "command + K" or "ctrl + L" to make your console lo
 
 Now enter `console` in the console (that's a little funky to say, huh?) and press "enter". In Chrome, you'll see something like
 
-![console](https://curriculum-content.s3.amazonaws.com/skills-based-js/console.png)
+Object {}
 
 This is all probably a bit mystifying at the moment. You can explore that console thing (psst: it's an _object_, which we'll learn more about later), but feel free to move on to learn about how we use it.
 
