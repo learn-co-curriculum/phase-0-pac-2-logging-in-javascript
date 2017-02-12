@@ -20,7 +20,7 @@ Logging lets us revisit our application as if it was running. It's a useful tool
 
 In this lesson, we're going to look at ways to log with JavaScript. Let's dive in!
 
-![dive in](http://i.giphy.com/LlPGmmhr0GcKs.gif)
+![dive in](https://i.giphy.com/LlPGmmhr0GcKs.gif)
 
 ## `console`
 
