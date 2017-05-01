@@ -109,5 +109,6 @@ As with `console.error()`, we use `console.warn()` to indicate in our log histor
 ## Resources
 
 - [MDN: Console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Mastering The Developer Tools Console](http://blog.teamtreehouse.com/mastering-developer-tools-console)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/javascript-logging'>JavaScript Logging</a> on Learn.co and start learning to code for free.</p>
