@@ -22,8 +22,7 @@ Notice, when the REPL opens, that they've already provided an example:
 console.log('Hello, world!');
 ```
 
-If you change the string and click the Run button, you'll see the new message
-output in the terminal.
+If you click the Run button, you'll see the message output in the terminal.
 
 We can log more than just a simple message. In fact, we can pass any number of
 messages to `console.log()` by separating them with commas; when printed,
@@ -78,7 +77,7 @@ console.log(canWork, canEnlist, isAdult, canDrink);
 ```
 
 Next, let's set the `age` variable to a value of 16 and click the run button.
-You should see the following:
+You should see the following output to the terminal:
 
 ```bash
 true false false false
@@ -99,8 +98,8 @@ This looks complicated, but all we're doing here is stringing together a series
 of expressions &mdash; some of them simple string values, and some of them
 variables &mdash; with commas between each one.
 
-We can also use string interpolation inside our `console.log()` to do the same
-thing:
+Alternatively, we can use string interpolation inside our `console.log()` to do
+the same thing:
 
 ```js
 console.log(`Age: ${age}, Can work: ${canWork}, Can enlist: ${canEnlist}, Is a legal adult: ${isAdult}, Can drink: ${canDrink}`);
@@ -156,7 +155,7 @@ where the error is (ie, inside the block that _should_ be executing):
 If we click the Run button, the message does _not_ get logged so we know the
 code block is not getting executed. This tells us that there's something wrong
 with the conditional itself. If the message _did_ get logged we would know that
-the problem is somewhere inside the code block.
+the problem is somewhere inside the code block instead.
 
 Next, we could try changing `age` to 19. In this case, the message _does_ get
 logged, so we know our conditional is only broken for age 18. This gives us
@@ -169,7 +168,7 @@ that the last thing we removed was what was causing the problem. For example, if
 our overall condition is comprised of two conditions joined by `&&`, we could
 check each expression individually. Whichever one returns `false` instead of
 `true` is the one with the problem. We could then continue to "drill down" as
-necessary until we find the problem.
+necessary until we find what's wrong.
 
 **Top Tip**: Even better, we can use `console.log()` as we're building the
 conditional in the first place, using an approach like the one outlined below.
