@@ -109,11 +109,11 @@ With this approach, we're passing _a single expression_ to `console.log()`
 instead of a series of them. The commas here, therefore, are part of the string.
 Be sure to run both versions in the REPL so you can see the difference.
 
-If we wanted to, we could make the log output easier to read by putting each
-variable on its own line, either by using multiple `console.log()`s, or by using
-the new line character (`\n`). But since the `console.log()` is just for our
-(the developer's) use and won't be seen by end users, the above may be perfectly
-acceptable.
+If we were writing user-facing code here, we would probably want to make it
+easier to read by putting each variable on its own line. We could do that either
+by using multiple `console.log()`s, or by using the new line character (`\n`).
+But since the `console.log()` is just for our (the developer's) use, the above
+may be perfectly acceptable.
 
 With this `console.log()` set up we can try our code with as many age values as
 we like, checking each time to verify that the variables have been set
@@ -188,7 +188,8 @@ if ([condition 1]) {
 You should think of the ideas presented above as examples of a general approach
 to debugging. Debugging is largely a matter of using _logic_ to narrow in on the
 problematic bit of code until you find the error. It is worth getting
-comfortable using `console.log()`; it can be a valuable tool in this process.
+comfortable using `console.log()` because it can be a valuable tool in this
+process.
 
 ## Conclusion
 
