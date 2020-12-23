@@ -1,114 +1,198 @@
-# JavaScript Logging
+# Logging in JavaScript
 
-## Overview
+## Learning Goals
 
-In this lesson we'll be looking at the many ways to log with Javascript 
+* Learn about logging in JavaScript
+* Use `console.log()` in the development process
+* Use `console.log()` for debugging
 
+## Logging
 
-## Objectives
+The venerable `console.log()` is an all-purpose logging _method_. (A **method**
+or a **function** is a bit of code that _does_ something. We _call_ them when we
+want them to act.) In programming, _logging_ refers to the process of printing
+information about the program as it runs. Note that `console.log()` is a
+_development_ tool; it's not something that's used in deployed code.
 
-1. Explore the `console` object
-2. Use different logging methods
+Let's take a look at how it works. Open up [repl.it][] and follow along.
 
-## Logging 
-
-Journals give us a window into the past, helping us discern what happened when and what the outcome was. We keep journals, traditionally, by writing things down with a timestamp (which could just be a date).
-
-In programming, logging is like journaling. It records a history of a running application that we can revisit, giving us insight into what was happening at a given point in time.
-
-Logging lets us revisit our application as if it was running. It's a useful tool for tracking bugs, performance, and generally ensuring that our applications are chugging along.
-
-In this lesson, we're going to look at ways to log with JavaScript. Let's dive in!
-
-![dive in](https://i.giphy.com/LlPGmmhr0GcKs.gif)
-
-## `console`
-
-Open the console in your browser of choice.
-
-**Top Tip**: If you already have the console open but you find that it's getting a little cluttered, you can clear it out by clicking the "Clear console" button — it looks like this in Chrome:
-
-![clear console](https://curriculum-content.s3.amazonaws.com/skills-based-js/clear_console.png)
-
-Alternatively, you can press `cmd` + `k`" or `ctrl` + `l` to make your console look fresh and new.
-
-Now enter `console` in the console (that's a little funky to say, huh?) and press "enter". In Chrome, you'll see something like
-
-Object {}
-
-This is all probably a bit mystifying at the moment. You can explore that console thing (psst: it's an _object_, which we'll learn more about later), but feel free to move on to learn about how we use it.
-
-### `log()`
-
-The venerable `console.log()` is an all-purpose logging _method_. (A **method** or a **function** is a bit of code that _does_ something. We _call_ them when we want them to act.) In programming, _logging_ refers to the process of printing information about the program as it runs. Try it out!
+Notice, when the REPL opens, that they've already provided an example:
 
 ``` javascript
-console.log("I'm logging! I'm a regular lumberjack!")
+console.log('Hello, world!');
 ```
 
-You can pass any number of messages to `console.log()` by separating them with commas; when printed, they'll be separated by a space:
+If you change the string and click the Run button, you'll see the new message
+output in the terminal.
+
+We can log more than just a simple message. In fact, we can pass any number of
+messages to `console.log()` by separating them with commas; when printed,
+they'll be separated by a space:
 
 ``` javascript
-console.log('one', 'two', 'three')
+console.log('one', 'two', 'three');
 ```
 
-When you enter the above in your console, you'll see "one two three".
-
-And you don't just have to pass strings to `console.log()` — try this:
+And we can pass other types of values to `console.log()`, not just strings. Give
+this a try:
 
 ``` javascript
-console.log("I must have logged", 1000, "times today.")
+console.log("I must have logged", 1000, "times today.");
 ```
 
-You should see "I must have logged 1000 times today."
+Note that, for that first string ("I must have logged"), the comma is _after_
+the end quotation mark. This is because the comma is not part of the string;
+instead, it's how we tell JavaScript, "Hey, I'm going to give you something
+else!"
 
-Note that when you use strings, the comma must come _after_ the end quotation mark — this is because it's not punctuation like in English writing, but a way of telling JavaScript, "Hey, I'm going to give you something else!"
+We can also pass _variables_ to `console.log()`:
 
-### `error()`
-
-`console.error()` prints an error and usually includes a _stack trace_. A "stack trace" is a report of code that was executed at a certain time (in this case, starting from when the error occurred and working backwards). Enter the following in your console:
-
-``` javascript
-console.error('Danger, Will Robinson!')
+```js
+const name = "Byron the Poodle";
+console.log("Hello,", name);
 ```
 
-You should see something like
+In fact, we can log any _expression_ &mdash; even very complex ones &mdash;
+using `console.log()`.
 
-![console.error](https://curriculum-content.s3.amazonaws.com/skills-based-js/console_error.png)
+## Using `console.log()` in the Development Process
 
-If you click on the arrow, you can see the stack trace. When you're debugging, you can click on the linked line numbers in the stack trace to jump to the relevant line in the source code. That won't be particularly useful here, since it will just take you to some of Chrome's internal JavaScript — but it can be incredibly useful when you're writing your own code!
+Where `console.log()` gets really helpful is when you use it to check that your
+code is functioning as you want it to. Let's revisit an example from an earlier
+lesson:
 
-You can pass several messages at once, separated by a comma:
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/PaltryEqualMicroinstruction?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-``` javascript
-console.error("Danger!", "Something bad happened!", "Time to debug!")
+Let's say we want to run some tests to make sure that we have our `if` statement
+set up properly. We can do this by checking the values of the four variables for
+different values of `age`. Recall that, when we worked with this code before, we
+had to check each of our variables one at a time since only the value of the
+_last_ executed expression is displayed in the REPL's terminal window. This can
+get pretty tedious, especially if we have a lot of variables or a lot of
+conditions (or both). Here's where `console.log()` comes in.
+
+Let's add the following to the end of our code:
+
+```js
+console.log(canWork, canEnlist, isAdult, canDrink);
 ```
 
-When printed, there will be a space after each message: `"Danger! Something bad happened! Time to debug!"`.
+Next, let's set the `age` variable to a value of 16 and click the run button.
+You should see the following:
 
-You might ask why we'd ever need to use this — isn't the goal of writing good code to avoid errors? Well, sure, but sometimes errors are out of our control: the network could go down, data could change, or a user could enter something invalid. In these cases, it's helpful to report not only what happened (which logging _generally_ is good for) but also what kind of thing happened — in these cases, it was an error, so we use `console.error()`.
-
-### `warn()`
-
-`console.warn()` does as its name suggests: it prints a warning. We can use `console.warn()` to, well, warn developers that an action they've taken _might_ not be wise — one common use-case is giving developers a heads-up that some of the code they've written might no longer be supported.
-
-``` javascript
-console.warn('Hm, you might not want to do that.')
+```bash
+true false false false
 ```
 
-It might be a while before you find yourself needing to use `console.warn()` — but you should think of it every time you see those yellow messages in the browser's console!
+It looks like our code is working if `age` is set to 16, but our message could
+be a little more informative. We can see that only one of the variables is
+`true`, which is what we want, but it's not immediately apparent _which_ of the
+variables is the one that's `true`. So let's add some labels. To do this, we'll
+use a combination of strings and variables inside our `console.log()`. While
+we're at it, let's log the `age` value as well:
 
-![console.warn()](https://curriculum-content.s3.amazonaws.com/skills-based-js/console_warn.png)
+```js
+console.log("Age:", age, "Can work:", canWork, "Can enlist:", canEnlist, "Is a legal adult:", isAdult, "Can drink:", canDrink);
+```
 
-As with `console.error()`, we use `console.warn()` to indicate in our log history that something undesirable happened, but it _shouldn't_ have broken anything (unlike an error, which could break things). Warnings, as mentioned above, could give us insight into things that might break in the future or actions that _worked_ but maybe shouldn't have — just like in real life!
+This looks complicated, but all we're doing here is stringing together a series
+of expressions &mdash; some of them simple string values, and some of them
+variables &mdash; with commas between each one.
 
-## Wrap-up
+We can also use string interpolation inside our `console.log()` to do the same
+thing:
 
-`console` has _tons_ (or _tonnes_ for some folks) of useful functionality — be sure to explore! Logging info, errors, warnings, and stack traces is essential to staying on top of your application's functionality.
+```js
+console.log(`Age: ${age}, Can work: ${canWork}, Can enlist: ${canEnlist}, Is a legal adult: ${isAdult}, Can drink: ${canDrink}`);
+```
 
-## Resources
+With this approach, we're passing _a single expression_ to `console.log()`
+instead of a series of them. The commas here, therefore, are part of the string.
+Be sure to run both versions in the REPL so you can see the difference.
 
-- [MDN: Console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Mastering The Developer Tools Console](http://blog.teamtreehouse.com/mastering-developer-tools-console)
+If we wanted to, we could make the log output easier to read by putting each
+variable on its own line, either by using multiple `console.log()`s, or by using
+the new line character (`\n`). But since the `console.log()` is just for our
+(the developer's) use and won't be seen by end users, the above may be perfectly
+acceptable.
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-logging'>JavaScript Logging</a> on Learn.co and start learning to code for free.</p>
+With this `console.log()` set up we can try our code with as many age values as
+we like, checking each time to verify that the variables have been set
+correctly.
+
+## Using `console.log()` for Debugging
+
+Let's say we've gotten our code to this point:
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BelatedMustyGzip?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+We have our `console.log()` set up and we're ready to start testing it. We
+decide to start with our 'least adult' category, which is children under age 16,
+so we set `age` equal to 15 and click run. Everything looks fine &mdash; we get
+four `false`s &mdash; so we change `age` to 16, then 17. So far, so good.
+But then when we test it for an `age` of 18, we see the following:
+
+```bash
+Age: 18
+Can work: true
+Can enlist: false
+Is a legal adult: false
+Can drink: false
+```
+
+Hmm, obviously we've got an error somewhere. The code for ages 18-20 isn't
+returning the expected result, so let's take a look at that conditional: `else
+if (age > 18)`. With a simple condition like this, we might realize right away
+that we accidentally used `>` instead of `>=`. But imagine a case where our
+condition is more complex and we don't immediately see the problem. Let's think
+about some ideas for ways we can use `console.log()` to help us find and correct
+it.
+
+To start, we could try logging a message _inside_ the block for the condition
+where the error is (ie, inside the block that _should_ be executing):
+
+<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EnormousIcyTriangle?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+If we click the Run button, the message does _not_ get logged so we know the
+code block is not getting executed. This tells us that there's something wrong
+with the conditional itself. If the message _did_ get logged we would know that
+the problem is somewhere inside the code block.
+
+Next, we could try changing `age` to 19. In this case, the message _does_ get
+logged, so we know our conditional is only broken for age 18. This gives us
+another clue as to how to fix it.
+
+If we had a more complicated conditional and still couldn't find the problem, we
+could try logging the conditional itself, simplifying it one step at a time
+until it _does_ return `true`. As soon as we get a `true` return value, we know
+that the last thing we removed was what was causing the problem. For example, if
+our overall condition is comprised of two conditions joined by `&&`, we could
+check each expression individually. Whichever one returns `false` instead of
+`true` is the one with the problem. We could then continue to "drill down" as
+necessary until we find the problem.
+
+**Top Tip**: Even better, we can use `console.log()` as we're building the
+conditional in the first place, using an approach like the one outlined below.
+Only after you have the conditions working the way you need them to would you
+begin building out the code blocks. Taking this incremental approach will make
+it much easier to find and fix any errors.
+
+```js
+if ([condition 1]) {
+    console.log("Condition 1 returned true")
+} else if ([condition 2]) {
+    console.log("Condition 2 returned true")
+}
+...
+```
+
+You should think of the ideas presented above as examples of a general approach
+to debugging. Debugging is largely a matter of using _logic_ to narrow in on the
+problematic bit of code until you find the error. It is worth getting
+comfortable using `console.log()`; it can be a valuable tool in this process.
+
+## Conclusion
+
+In this lesson, we've learned how to use the `console.log()` method. We've also explored some ways we can use it to help us with writing and debugging code.
+
+[repl.it]: https://repl.it/languages/javascript
