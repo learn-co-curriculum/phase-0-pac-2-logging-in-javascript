@@ -170,11 +170,7 @@ check each expression individually. Whichever one returns `false` instead of
 `true` is the one with the problem. We could then continue to "drill down" as
 necessary until we find what's wrong.
 
-**Top Tip**: Even better, we can use `console.log()` as we're building the
-conditional in the first place, using an approach like the one outlined below.
-Only after you have the conditions working the way you need them to would you
-begin building out the code blocks. Taking this incremental approach will make
-it much easier to find and fix any errors.
+> **Top Tip**: Even better, we can use `console.log()` as we're building the conditional in the first place, using an approach like the one outlined below. Only after you have the conditions working the way you need them to would you begin building out the code blocks. Taking this incremental approach will make it much easier to find and fix any errors.
 
 ```js
 if ([condition 1]) {
