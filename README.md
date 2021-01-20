@@ -171,15 +171,15 @@ check each expression individually. Whichever one returns `false` instead of
 necessary until we find what's wrong.
 
 > **Top Tip**: Even better, we can use `console.log()` as we're building the conditional in the first place, using an approach like the one outlined below. Only after you have the conditions working the way you need them to would you begin building out the code blocks. Taking this incremental approach will make it much easier to find and fix any errors.
-
-```js
-if ([condition 1]) {
-    console.log("Condition 1 returned true")
-} else if ([condition 2]) {
-    console.log("Condition 2 returned true")
-}
-...
-```
+>
+> ```js
+> if ([condition 1]) {
+>     console.log("Condition 1 returned true")
+> } else if ([condition 2]) {
+>    console.log("Condition 2 returned true")
+> }
+> ...
+> ```
 
 You should think of the ideas presented above as examples of a general approach
 to debugging. Debugging is largely a matter of using _logic_ to narrow in on the
