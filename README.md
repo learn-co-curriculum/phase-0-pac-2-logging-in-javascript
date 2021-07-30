@@ -51,7 +51,7 @@ const name = "Byron the Poodle";
 console.log("Hello,", name);
 ```
 
-In fact, we can log any _expression_ &mdash; even very complex ones &mdash;
+In fact, we can log any _expression_ — even very complex ones —
 using `console.log()`.
 
 ## Using `console.log()` in the Development Process
@@ -95,8 +95,8 @@ console.log("Age:", age, "Can work:", canWork, "Can enlist:", canEnlist, "Is a l
 ```
 
 This looks complicated, but all we're doing here is stringing together a series
-of expressions &mdash; some of them simple string values, and some of them
-variables &mdash; with commas between each one.
+of expressions — some of them simple string values, and some of them
+variables — with commas between each one.
 
 Alternatively, we can use string interpolation inside our `console.log()` to do
 the same thing:
@@ -127,8 +127,8 @@ Let's say we've gotten our code to this point:
 
 We have our `console.log()` set up and we're ready to start testing it. We
 decide to start with our 'least adult' category, which is children under age 16,
-so we set `age` equal to 15 and click run. Everything looks fine &mdash; we get
-four `false`s &mdash; so we change `age` to 16, then 17. So far, so good.
+so we set `age` equal to 15 and click run. Everything looks fine — we get
+four `false`s — so we change `age` to 16, then 17. So far, so good.
 But then when we test it for an `age` of 18, we see the following:
 
 ```bash
