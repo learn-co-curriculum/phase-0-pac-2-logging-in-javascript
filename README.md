@@ -14,26 +14,23 @@ want them to act.) In programming, _logging_ refers to the process of printing
 information about the program as it runs. Note that `console.log()` is a
 _development_ tool; it's not something that's used in deployed code.
 
-Let's take a look at how it works. Open up [repl.it][] and follow along.
+Let's take a look at how it works. Open up [replit][] and follow along.
 
-Notice, when the REPL opens, that they've already provided an example:
+As we've seen before, there is an example provided in the code window:
 
 ```js
 console.log("Hello, world!");
 ```
 
-If you click the Run button, you'll see the message output in the terminal.
-
-We can log more than just a simple message. In fact, we can pass any number of
-messages to `console.log()` by separating them with commas; when printed,
-they'll be separated by a space:
+We've also seen that we can log more than just a simple message. In fact, we can
+pass any number of messages to `console.log()` by separating them with commas;
+when printed, they'll be separated by a space:
 
 ```js
 console.log("one", "two", "three");
 ```
 
-And we can pass other types of values to `console.log()`, not just strings. Give
-this a try:
+We can also include values of different types. Give this a try:
 
 ```js
 console.log("I must have logged", 1000, "times today.");
@@ -44,15 +41,16 @@ the end quotation mark. This is because the comma is not part of the string;
 instead, it's how we tell JavaScript, "Hey, I'm going to give you something
 else!"
 
-We can also pass _variables_ to `console.log()`:
+As we saw earlier in this section, we can also pass _variables_ to
+`console.log()`:
 
 ```js
 const name = "Byron the Poodle";
 console.log("Hello,", name);
 ```
 
-In fact, we can log any _expression_ — even very complex ones —
-using `console.log()`.
+As a reminder, we can log any _expression_ — even very complex ones — using
+`console.log()`.
 
 ## Using `console.log()` in the Development Process
 
@@ -60,17 +58,14 @@ Where `console.log()` gets really helpful is when you use it to check that your
 code is functioning as you want it to. Let's revisit an example from an earlier
 lesson:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/PaltryEqualMicroinstruction?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/PaltryEqualMicroinstruction?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Let's say we want to run some tests to make sure that we have our `if` statement
 set up properly. We can do this by checking the values of the four variables for
-different values of `age`. Recall that, when we worked with this code before, we
-had to check each of our variables one at a time since only the value of the
-_last_ executed expression is displayed in the REPL's terminal window. This can
-get pretty tedious, especially if we have a lot of variables or a lot of
-conditions (or both). Here's where `console.log()` comes in.
+different values of `age`. Here's where `console.log()` comes in.
 
-Let's add the following to the end of our code:
+Go ahead and open [replit][] and copy/paste the code above into the code window.
+Next, let's add the following to the end of our code:
 
 ```js
 console.log(canWork, canEnlist, isAdult, canDrink);
@@ -88,7 +83,8 @@ be a little more informative. We can see that only one of the variables is
 `true`, which is what we want, but it's not immediately apparent _which_ of the
 variables is the one that's `true`. So let's add some labels. To do this, we'll
 use a combination of strings and variables inside our `console.log()`. While
-we're at it, let's log the `age` value as well:
+we're at it, let's log the `age` value as well. Replace the existing
+`console.log()` with the following:
 
 ```js
 console.log(
@@ -136,7 +132,7 @@ correctly.
 
 Let's say we've gotten our code to this point:
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/BelatedMustyGzip?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/BelatedMustyGzip?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 We have our `console.log()` set up and we're ready to start testing it. We
 decide to start with our 'least adult' category, which is children under age 16,
@@ -163,7 +159,7 @@ it.
 To start, we could try logging a message _inside_ the block for the condition
 where the error is (ie, inside the block that _should_ be executing):
 
-<iframe height="400px" width="100%" src="https://repl.it/@LizBurton/EnormousIcyTriangle?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/EnormousIcyTriangle?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 If we click the Run button, the message does _not_ get logged so we know the
 code block is not getting executed. This tells us that there's something wrong
@@ -208,4 +204,4 @@ process.
 In this lesson, we've learned how to use the `console.log()` method. We've also
 explored some ways we can use it to help us with writing and debugging code.
 
-[repl.it]: https://repl.it/languages/javascript
+[replit]: https://replit.com/languages/javascript
