@@ -45,7 +45,7 @@ As we saw earlier in this section, we can also pass _variables_ to
 `console.log()`:
 
 ```js
-const name = "Byron the Poodle";
+const name = "Spinach the Shiba";
 console.log("Hello,", name);
 ```
 
@@ -58,7 +58,24 @@ Where `console.log()` gets really helpful is when you use it to check that your
 code is functioning as you want it to. Let's revisit an example from an earlier
 lesson:
 
-<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/PaltryEqualMicroinstruction?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const age = 20;
+
+let isAdult=false, canWork=false, canEnlist=false, canDrink=false;
+
+if (age >= 21) {
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+  canDrink = true;
+} else if (age >= 18) {
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+} else if (age >= 16) {
+  canWork = true;
+}
+```
 
 Let's say we want to run some tests to make sure that we have our `if` statement
 set up properly. We can do this by checking the values of the four variables for
@@ -132,7 +149,26 @@ correctly.
 
 Let's say we've gotten our code to this point:
 
-<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/BelatedMustyGzip?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const age = 18;
+
+let isAdult=false, canWork=false, canEnlist=false, canDrink=false;
+
+if (age >= 21) {
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+  canDrink = true;
+} else if (age > 18) {
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+} else if (age >= 16) {
+  canWork = true;
+}
+
+console.log(`Age: ${age}\nCan work: ${canWork}\nCan enlist: ${canEnlist}\nIs a legal adult: ${isAdult}\nCan drink: ${canDrink}`);
+```
 
 We have our `console.log()` set up and we're ready to start testing it. We
 decide to start with our 'least adult' category, which is children under age 16,
@@ -154,12 +190,32 @@ returning the expected result, so let's take a look at that conditional:
 away that we accidentally used `>` instead of `>=`. But imagine a case where our
 condition is more complex and we don't immediately see the problem. Let's think
 about some ideas for ways we can use `console.log()` to help us find and correct
-it.
+it. Be sure to follow along in the REPL.
 
 To start, we could try logging a message _inside_ the block for the condition
-where the error is (ie, inside the block that _should_ be executing):
+where the error is (i.e., inside the block that _should_ be executing):
 
-<iframe height="400px" width="100%" src="https://replit.com/@LizBurton/EnormousIcyTriangle?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const age = 18;
+
+let isAdult=false, canWork=false, canEnlist=false, canDrink=false;
+
+if (age >= 21) {
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+  canDrink = true;
+} else if (age > 18) {
+  console.log("The condition returned true")
+  canWork = true;
+  canEnlist = true;
+  isAdult = true;
+} else if (age >= 16) {
+  canWork = true;
+}
+
+console.log(`Age: ${age}\nCan work: ${canWork}\nCan enlist: ${canEnlist}\nIs a legal adult: ${isAdult}\nCan drink: ${canDrink}`);
+```
 
 If we click the Run button, the message does _not_ get logged so we know the
 code block is not getting executed. This tells us that there's something wrong
